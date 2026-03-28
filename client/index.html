@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+
+    <!-- ═══════════════════════════════════════════════
+         SÉCURITÉ – Headers HTTP via meta
+         ═══════════════════════════════════════════════ -->
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://maps.gstatic.com https://analytics.manus.space;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: blob: https: http:;
+        connect-src 'self' https://maps.googleapis.com https://analytics.manus.space;
+        frame-src https://www.google.com https://maps.google.com https://www.google.com/maps/;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+      " />
+    <!-- Empêche le clickjacking -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <!-- Empêche le MIME sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!-- Permissions Policy -->
+    <meta http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(self), payment=()" />
+
+    <!-- ═══════════════════════════════════════════════
+         SEO – Meta de base (fallback, remplacées dynamiquement)
+         ═══════════════════════════════════════════════ -->
+    <title>SOCIETE CHAUFFAGE SANITAIRE CATALAN | Expert Plombier & Chauffage à Perpignan</title>
+    <meta name="description"
+      content="Électricien RGE à Perpignan (66). Installation, dépannage 7j/7, mise en conformité, borne IRVE, panneaux solaires. Devis gratuit sous 24h." />
+    <meta name="keywords"
+      content="électricien perpignan, dépannage électrique 66, installation électrique, mise en conformité NF C 15-100, borne IRVE perpignan, électricien RGE" />
+    <meta name="author" content="ÉlecPro Perpignan" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://electricien-perpignan66.fr/" />
+
+    <!-- ═══════════════════════════════════════════════
+         OPEN GRAPH (Facebook, LinkedIn, WhatsApp)
+         ═══════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ÉlecPro Perpignan" />
+    <meta property="og:title" content="Électricien Perpignan 66 – Devis Gratuit | ÉlecPro" />
+    <meta property="og:description"
+      content="Électricien certifié RGE à Perpignan. Installation, dépannage 7j/7, mise en conformité, borne IRVE, panneaux solaires. Devis gratuit en 24h." />
+    <meta property="og:url" content="https://electricien-perpignan66.fr/" />
+    <meta property="og:image"
+      content="https://d2xsxph8kpxj0f.cloudfront.net/310519663468020547/b23Hm8oyV3TPnHzP3iCvwg/hero-electricien-Vr46JfruqYxroApnLBtBds.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Électricien professionnel à Perpignan – ÉlecPro" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- ═══════════════════════════════════════════════
+         TWITTER CARD
+         ═══════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Électricien Perpignan 66 – Devis Gratuit | ÉlecPro" />
+    <meta name="twitter:description"
+      content="Électricien certifié RGE à Perpignan. Dépannage 7j/7, installation, mise en conformité. Devis gratuit." />
+    <meta name="twitter:image"
+      content="https://d2xsxph8kpxj0f.cloudfront.net/310519663468020547/b23Hm8oyV3TPnHzP3iCvwg/hero-electricien-Vr46JfruqYxroApnLBtBds.webp" />
+
+    <!-- ═══════════════════════════════════════════════
+         GÉO-LOCALISATION SEO LOCAL
+         ═══════════════════════════════════════════════ -->
+    <meta name="geo.region" content="FR-66" />
+    <meta name="geo.placename" content="Perpignan" />
+    <meta name="geo.position" content="42.6976;2.8954" />
+    <meta name="ICBM" content="42.6976, 2.8954" />
+
+    <!-- ═══════════════════════════════════════════════
+         DONNÉES STRUCTURÉES JSON-LD – LocalBusiness (global)
+         ═══════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ElectricalContractor",
+      "@id": "https://electricien-perpignan66.fr/#business",
+      "name": "ÉlecPro Perpignan",
+      "alternateName": "Électricien Perpignan 66",
+      "description": "Électricien certifié RGE à Perpignan. Installation électrique, dépannage d'urgence, mise en conformité NF C 15-100, tableau électrique, borne IRVE, panneaux solaires photovoltaïques dans les Pyrénées-Orientales.",
+      "url": "https://electricien-perpignan66.fr",
+      "telephone": "+33468000000",
+      "email": "contact@elecpro66.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Perpignan",
+        "addressLocality": "Perpignan",
+        "postalCode": "66000",
+        "addressRegion": "Occitanie",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.6976,
+        "longitude": 2.8954
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "07:30",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Carte bancaire, Virement, Chèque",
+      "areaServed": [
+        "Perpignan", "Canet-en-Roussillon", "Saint-Estève", "Rivesaltes",
+        "Argelès-sur-Mer", "Collioure", "Thuir", "Elne", "Prades",
+        "Saint-Cyprien", "Pia", "Banyuls-sur-Mer", "Céret",
+        "Villelongue-de-la-Salanque", "Le Boulou"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certification RGE",
+          "credentialCategory": "Reconnu Garant de l'Environnement"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certification IRVE",
+          "credentialCategory": "Infrastructure de Recharge pour Véhicules Électriques"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/elecproperpignan",
+        "https://www.instagram.com/elecproperpignan"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════
+         POLICES GOOGLE FONTS
+         ═══════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- ═══════════════════════════════════════════════
+         FAVICON & ICONS
+         ═══════════════════════════════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0A1628" />
+
+    <!-- ═══════════════════════════════════════════════
+         PERFORMANCE – Préchargement des ressources critiques
+         ═══════════════════════════════════════════════ -->
+    <!-- DNS prefetch pour les domaines tiers -->
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    <link rel="dns-prefetch" href="https://maps.gstatic.com" />
+    <link rel="dns-prefetch" href="https://d2xsxph8kpxj0f.cloudfront.net" />
+    <!-- Preconnect pour les ressources critiques -->
+    <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" crossorigin />
+    <!-- Preload image hero (LCP critique) -->
+    <link rel="preload" as="image" fetchpriority="high"
+      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663468020547/b23Hm8oyV3TPnHzP3iCvwg/hero-electricien-Vr46JfruqYxroApnLBtBds.webp" />
+    <!-- Preload police Montserrat (titre, LCP) -->
+    <link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script
+      defer
+      src="%VITE_ANALYTICS_ENDPOINT%/umami"
+      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+  </body>
+
+</html>
