@@ -1,0 +1,304 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-cyan: var(--cyan);
+}
+
+:root {
+  /* Brand Colors */
+  --navy: oklch(0.18 0.06 240);        /* #0A1628 */
+  --navy-light: oklch(0.22 0.06 240);  /* #0F1E35 */
+  --cyan: oklch(0.7 0.2 210);          /* #06b6d4 equivalent */
+  --cyan-dark: oklch(0.6 0.2 210);    /* darker cyan */
+
+  --radius: 0.75rem;
+  --background: oklch(0.97 0.002 240);
+  --foreground: oklch(0.18 0.06 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.06 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.06 240);
+  --primary: oklch(0.18 0.06 240);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.93 0.005 240);
+  --secondary-foreground: oklch(0.18 0.06 240);
+  --muted: oklch(0.93 0.005 240);
+  --muted-foreground: oklch(0.5 0.02 240);
+  --accent: oklch(0.7 0.2 210);
+  --accent-foreground: oklch(0.18 0.06 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.005 240);
+  --input: oklch(0.88 0.005 240);
+  --ring: oklch(0.7 0.2 210);
+  --sidebar: oklch(0.97 0.002 240);
+  --sidebar-foreground: oklch(0.18 0.06 240);
+  --sidebar-primary: oklch(0.18 0.06 240);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.93 0.005 240);
+  --sidebar-accent-foreground: oklch(0.18 0.06 240);
+  --sidebar-border: oklch(0.88 0.005 240);
+  --sidebar-ring: oklch(0.7 0.2 210);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Section title underline accent */
+  .section-title-accent {
+    position: relative;
+    display: inline-block;
+  }
+  .section-title-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #06b6d4;
+    border-radius: 2px;
+  }
+  .section-title-accent-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Water pattern background */
+  .water-bg {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(6, 182, 212, 0.08) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  /* Cyan glow effect */
+  .cyan-glow {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+}
+
+/* ============================================================
+   PERFORMANCE & RESPONSIVE OPTIMIZATIONS
+   ============================================================ */
+
+/* Smooth scroll – respect prefer-reduced-motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Typographie fluide – clamp() pour s'adapter sans breakpoints */
+:root {
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.82rem + 0.28vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.63vw, 1.375rem);
+  --text-xl:   clamp(1.25rem,  1.1rem  + 0.75vw, 1.625rem);
+  --text-2xl:  clamp(1.5rem,   1.2rem  + 1.5vw,  2rem);
+  --text-3xl:  clamp(1.875rem, 1.4rem  + 2.38vw, 2.5rem);
+  --text-4xl:  clamp(2.25rem,  1.6rem  + 3.25vw, 3.25rem);
+  --text-5xl:  clamp(2.75rem,  1.8rem  + 4.75vw, 4rem);
+  --text-6xl:  clamp(3rem,     1.8rem  + 6vw,    5rem);
+}
+
+/* Appliquer la typo fluide aux titres principaux */
+.fluid-h1 { font-size: var(--text-5xl); }
+.fluid-h2 { font-size: var(--text-4xl); }
+.fluid-h3 { font-size: var(--text-3xl); }
+.fluid-h4 { font-size: var(--text-2xl); }
+.fluid-body { font-size: var(--text-base); }
+
+/* GPU acceleration pour les éléments animés */
+.will-animate {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimisation images – éviter le layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lazy images – fondu à l'apparition (via JS onLoad) */
+img.img-fade {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+img.img-fade.loaded {
+  opacity: 1;
+}
+
+/* Touch targets minimum 44px pour l'accessibilité mobile */
+@media (max-width: 768px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Réduire les animations coûteuses sur mobile */
+  .reduce-mobile-anim {
+    animation: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+}
+
+/* Prevent layout shift pour les sections avec images de fond */
+.hero-section-stable {
+  contain: layout style;
+}
+
+/* Optimisation des polices – éviter FOUT */
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 22, 40, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Focus visible amélioré pour l'accessibilité */
+:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sélection de texte aux couleurs de la marque */
+::selection {
+  background-color: rgba(6, 182, 212, 0.3);
+  color: #0A1628;
+}
+
+/* Overflow horizontal global – éviter le scroll horizontal */
+body {
+  overflow-x: hidden;
+}
+
+/* Transitions globales fluides pour les liens et boutons */
+a, button {
+  transition: color 0.2s ease, background-color 0.2s ease,
+              border-color 0.2s ease, box-shadow 0.2s ease,
+              transform 0.15s ease;
+}
+
+/* Optimisation des cartes avec hover */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease;
+  will-change: transform;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Skeleton loading pour les images */
+.skeleton {
+  background: linear-gradient(90deg,
+    rgba(6,182,212,0.05) 25%,
+    rgba(6,182,212,0.12) 50%,
+    rgba(6,182,212,0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+}
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
