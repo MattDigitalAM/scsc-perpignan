@@ -1,0 +1,43 @@
+# ═══════════════════════════════════════════════════════
+# robots.txt – ÉlecPro Perpignan
+# Électricien certifié Pyrénées-Orientales (66)
+# ═══════════════════════════════════════════════════════
+
+User-agent: *
+Allow: /
+
+# Bloquer les ressources internes inutiles pour les crawlers
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Autoriser explicitement les assets importants
+Allow: /sitemap.xml
+Allow: /favicon.ico
+
+# Sitemap principal
+Sitemap: https://electricien-perpignan66.fr/sitemap.xml
+
+# ─── Directives spécifiques par bot ──────────────────
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Bloquer les bots malveillants connus
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
